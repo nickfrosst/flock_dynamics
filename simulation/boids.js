@@ -31,7 +31,7 @@ $(function(name) {
 		}
 		$('reset_button').click(function(e) {
 			simulation.initialize(use_obstacle,avoid_mouse);
-		}
+		});
 
 		//
 		// maintains mouse position
