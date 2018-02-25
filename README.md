@@ -56,7 +56,7 @@ Let’s say that we have observed catastrophe, our flock has flown straight into
     <br>
     <text><b> sabateurs </b></text> <input id="num_sabateurs_boids4" input type="range" name="num_sabateurs" min="0" max="50" value="0" step="1"/>
     <br>
-    <button id="reset_button" onclick="myFunction()">Reset</button>
+    <button id="reset_button_boids4">Reset</button>
 </form>	
 <canvas id="boids4" class="unselectable"></canvas>
 

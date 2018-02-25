@@ -29,12 +29,11 @@ $(function(name) {
 				return false;
 			});
 		}
-		$('reset_button').click(function(e) {
+
+		$('reset_button' + name).click(function(e) {
 			simulation.initialize(use_obstacle,avoid_mouse);
 		});
 
-		//
-		// maintains mouse position
 		$('canvas#' + name).mousemove(function(e) {
 			var rect = this.getBoundingClientRect();
 			simulation.update_mouse_position(e.clientX - rect.left,e.clientY - rect.top);
