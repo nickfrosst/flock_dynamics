@@ -20,12 +20,12 @@ function resizeCanvas( width, height ) {
 	var canvas$ = $( 'canvas' );
 
 	if ( 'undefined' == typeof( height ) ) {
-		height = $('.panel').width();
+		height = $('.giphy-embed').width();
 	}
 	canvas$.attr( 'height', height );
 
 	if ( 'undefined' == typeof( width ) ) {
-		width = $('.panel').width();
+		width = $('.giphy-embed').width();
 	}
 	canvas$.attr( 'width', width );
 
