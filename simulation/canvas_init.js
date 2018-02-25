@@ -29,14 +29,5 @@ function resizeCanvas( width, height ) {
 	}
 	canvas$.attr( 'width', width );
 
-	// Adjust the dimensions of the canvas and position the click notice
-
-	// Setting the height affects the window width so we can't group the attribute changes
-
-	var clickNotice$ = $( 'div#click_notice' );
-	clickNotice$.css( {
-		left: ( canvas$.width() - clickNotice$.width() ) / 2,
-		top: ( canvas$.height() - clickNotice$.height() - 5 )
-	} );
 }
 ;

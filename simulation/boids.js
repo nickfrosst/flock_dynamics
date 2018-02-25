@@ -30,7 +30,7 @@ $(function(name) {
 			});
 		}
 
-		$('reset_button' + name).click(function(e) {
+		$('#reset_button_' + name).click(function(e) {
 			simulation.initialize(use_obstacle,avoid_mouse);
 		});
 
