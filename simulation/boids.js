@@ -7,26 +7,31 @@ $(function(name) {
 
 	resizeCanvas();
 
-	var initialize_cavas_simulation = function(name,use_obstacle, avoid_mouse){
+	var initialize_cavas_simulation = function(name,use_obstacle, avoid_mouse, click_to_add){
 		var simulation = new Simulation(name);
 		simulation.initialize(use_obstacle,avoid_mouse);
 		simulation.run();
 
-		$('canvas#' + name).click(function(e) {
+		if (click_to_add){
+			$('canvas#' + name).click(function(e) {
 
-			// No need to show the notice once the user has already added a boid
-			var clickNotice$ = $('div#click_notice');
-			clickNotice$.fadeOut('fast');
+				// No need to show the notice once the user has already added a boid
+				var clickNotice$ = $('div#click_notice');
+				clickNotice$.fadeOut('fast');
 
-			var rect = this.getBoundingClientRect();
-			var canvasX = e.clientX - rect.left;
-			var canvasY = e.clientY - rect.top;
+				var rect = this.getBoundingClientRect();
+				var canvasX = e.clientX - rect.left;
+				var canvasY = e.clientY - rect.top;
 
-			boid = new Boid(canvasX, canvasY, simulation);
-			simulation.addBoid(boid);
+				boid = new Boid(canvasX, canvasY, simulation);
+				simulation.addBoid(boid);
 
-			return false;
-		});
+				return false;
+			});
+		}
+		$('reset_button').click(function(e) {
+			simulation.initialize(use_obstacle,avoid_mouse);
+		}
 
 		//
 		// maintains mouse position
@@ -57,9 +62,8 @@ $(function(name) {
 				simulation.update_alignmentMultiplier($(this).val());
 		});			
 	}
-	initialize_cavas_simulation('boids1',false, false)
-	initialize_cavas_simulation('boids2',false, true)
-	initialize_cavas_simulation('boids3',true, true)
-	initialize_cavas_simulation('boids4',true, true)
+	initialize_cavas_simulation('boids1',false, true, true)
+	initialize_cavas_simulation('boids2',false, true, false)
+	initialize_cavas_simulation('boids4',true, true, false)
 
 });

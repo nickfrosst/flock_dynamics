@@ -19,7 +19,7 @@ Simulation.prototype = {
 	initialize: function(use_obstacle,avoid_mouse) {
 		this.obstacles = [];
 		if (use_obstacle){
-			this.addObstacle(new Obstacle(this.canvasWidth / 2,this.canvasHeight / 2,50,2,this))
+			this.addObstacle(new Obstacle(this.canvasWidth / 2,this.canvasHeight / 2,40,2,this))
 		}
 		this.avoid_mouse = avoid_mouse
 		this.boids = [];

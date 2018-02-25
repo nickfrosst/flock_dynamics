@@ -1,4 +1,4 @@
-# Flock Dynamics and Social Catastrophy 
+# Flock Dynamics and Societal Catastrophy 
 
 <script src="./simulation/application.js"></script>
 <link href="./simulation/boids.css" media="screen" rel="stylesheet">
@@ -15,56 +15,54 @@ This behaviour of starlings is called a murmuration. It is exhibited by many her
 
 We are living in a convenient time for such pages as we have at our disposal a relatively new tool for scientific exploration, in computational simulation. There are countless philosophical pages dedicated to the role of simulation in science, and I will by no means attempt to summarize them here. I will simply posit that a new and interesting way of investigating a natural phenomena is to attempt to simulate it yourself. If you are able to recreate an accurate simulation of the observed phenomena then you will have learned something about what initial conditions that phenomena may need to arise, and what rules need to be followed to maintain it. This is particularly interesting when the phenomena is an emergent one, because we are able to simulate the individuals and see if the we can accurately recreate the global property.  
 
-<canvas id="boids1" class="unselectable"></canvas>
+<canvas id="boids1" class="unselectable"></canvas>]
+This investigative tool has been used for the behaviour of ants, the growth of plants, or the development of entire ecosystems[^1] to name just a few. Here it has been used to explore the murmurations of birds[^2].
 
-This investigative tool has been used for the behaviour of ants, the patterns of bark on trees, and the growth of the canopy in rainforests. Here it has been used to explore the murmurations of birds[^1].
-
-[^1]:code forked from [Emergent Mind](http://www.emergentmind.com/boids) and altered by me.
+[^1]:See wikipedia for an overview of each, and respectively, [here](https://en.wikipedia.org/wiki/Artificial_ants), [here](https://en.wikipedia.org/wiki/Simulated_growth_of_plants) and [here](ttps://en.wikipedia.org/wiki/Ecosystem_model)
+[^2]:code forked from [Emergent Mind](http://www.emergentmind.com/boids) and updated by me.
 
 Each bird (small red triangle) above is governed by 3 simple rules: 
 1. Fly towards your neighbors (cohesion)
 2. Match your neighbors' speed and direction (alignment)
 3. Don't get too close to your neighbors (separation)
+
 That’s it. All the patterns and movement and motion are just born from those simple rules, followed by each bird.
 
-In practice these rules are implemented by calculating the distance between each bird and applying the attraction or repulsion proportional to the distance squared. Similar equations can be used to model the movement of the moon around the earth, the earth around the sun, and the sun around the rest of the cosmic expanse, which alludes to the omnipresence of this type of movement, and explains my fascination. But before you go off to scrawl equations on the wall in crayon, or start a neo-pythagorean cult, i need to remind you that there is a difference between an ontological claim and a convenient explanatory tool. I won’t even claim that the equations used to create this visualizations have anything to do with the movement of birds or indeed the behaviour of people. But they are at least a useful way of thinking about it. 
+In practice these rules are implemented by calculating the distance between each bird and applying the attraction or repulsion inversely proportional to that distance squared. Similar equations can be used to model the movement of the moon around the earth, the earth around the sun, and the sun around the rest of the cosmic expanse, which alludes to the omnipresence of this type of movement, and explains my fascination. But before you go off to scrawl equations on the wall in crayon, or start a neo-pythagorean cult, i need to remind you that there is a difference between an ontological claim and a convenient explanatory tool. I won’t even claim that the equations used to create this visualizations have anything to do with the movement of birds or indeed the behaviour of people. But they are at least a useful way of thinking about it. 
 
-To be quite specific the code used to create this illustration keeps track of the velocity of each bird, and 60 times a second, it calculates the distance between each other bird,
-It then updates the velocity of each bird based on the three rules outlined above, each multiplied by a constant value. In the code there are 3 numbers which represent the relative effect of rule 1, 2 and 3, which were predefined by me and used to determine the strength of each rule. If the multiplier for rule 1 is too big, then the birds will all crowd together into a single point. If the multiplier for rule 3 is too big then they will all flee from each other in a chaotic mess. Each would result in something thoroughly uninteresting to look at. 
+To be quite specific the code used to create this illustration keeps track of the velocity of each bird, and 60 times a second, it calculates the distance between each other bird. It then updates the velocity of each bird based on the three rules outlined above, each multiplied by a constant value. In the code there are 3 numbers which represent the relative effect of rule 1, 2 and 3, which were predefined by me and used to determine the strength of each rule. If the multiplier for rule 1 is too big, then the birds will all crowd together into a single point. If the multiplier for rule 3 is too big then they will all flee from each other in a chaotic mess. Each would result in something thoroughly uninteresting to look at. 
 
 In the box below you can turn these knobs up or down yourself and see how it changes their behaviour. You will notice that a fine balance needs to be found between these 3 numbers in order for the flock behaviour to arise.
 <form name = "params" id = "params" >
-    <text><b> separation </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
-    <br>
     <text><b> cohesion </b></text> <input id="cohesionMultiplier_boids2" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
-    <text><b> alignment </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+     <text><b> alignment </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <br>
+    <text><b> separation </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
     <br>
 </form>	
 <canvas id="boids2" class="unselectable"></canvas>
 
-We can make things more interesting by giving them something to avoid, by adding in a fourth rule - stay away from the predator.  In the box below you will play that role. Move your mouse (or finger if on a phone) into the box and notice how the tide of feathers avoids you like the plague. I have also added another obstacle for them to avoid in the large red circle right in the middel there. If the birds come into contact with that circle, they will be removed from the simulation, or to put it more bluntly and metaphorically, they will be killed.  
+We can make things more interesting by giving them something to avoid, by adding in a fourth rule - stay away from the predator.  In the box below you will play that role. Move your mouse (or finger if on a phone) into the box and notice how the tide of feathers avoids you like the plague. I have also added another obstacle for them to avoid in the large red circle right in the middel there. If the birds come into contact with that circle, they will be removed from the simulation, or to put it more tersely and metaphorically, they will be killed.  
 
-<canvas id="boids3" class="unselectable"></canvas>
-
-
-Let’s say that we have observed catastrophe, our flock has flown straight into a wall. We must now play the role of detective and try to determine what happened to cause such a tragedy. Two explanations jump to mind. Either a small number of saboteurs, with malice and forethought, guided the flock to destruction, or all the birds were collectively unable to avoid the obstacle because they were blindsided by other motivators. If we turn up the knob controlling how close they want to stay to each other, they may be preoccupied by that desire and fly straight into oblivion. In the box below you can play with the number of saboteurs (where each saboteur wants to fly into the wall) and the relative weighting of the rule forces. I will leave it to you to determine which is a more practical way to insite destruction. 
+Let’s say that we have observed catastrophe, our flock has flown straight into a that obstacle. We must now play the role of detective and try to determine what happened to cause such a tragedy. Two explanations jump to mind. Either a small number of saboteurs, with malice and forethought, guided the flock to destruction, or all the birds were collectively unable to avoid the obstacle because they were blindsided by other motivators. If we turn up the knob controlling how close they want to stay to each other, they may be preoccupied by that desire and fly straight into oblivion. In the box below you can play with the number of saboteurs (where each saboteur wants to fly into the wall, and is represented in green) and the relative weighting of the rule forces. I will leave it to you to determine which is a more practical way to insite destruction. 
 
 <form name = "params" id = "params" >
-    <text><b> separation </b></text> <input id="separationMultiplier_boids4" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
-    <br>
     <text><b> cohesion </b></text> <input id="cohesionMultiplier_boids4" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
     <text><b> alignment </b></text> <input id="alignmentMultiplier_boids4" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
+    <text><b> separation </b></text> <input id="separationMultiplier_boids4" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
+    <br>
     <text><b> sabateurs </b></text> <input id="num_sabateurs_boids4" input type="range" name="num_sabateurs" min="0" max="50" value="0" step="1"/>
+    <br>
+    <button id="reset_button" onclick="myFunction()">Reset</button>
 </form>	
 <canvas id="boids4" class="unselectable"></canvas>
 
+Now by this point you are no doubt tired of birds and small red triangles, and perhaps see what I am getting to, so I will be blunt.
 
-Now by this point you are no doubt tired of birds and small black dots, and perhaps see what i am getting to, but i will be blunt.
+When you are frustrated with the way society is function, I want you to think of these birds. When you are concerned about the rampant inefficiencies of big government I want you to think about which individual well meaning motivators are creating that emergent behaviour. When are you worried about the rise of the alt-right I want you to try to understand what is enticing people to join that murmur. When you are disheartened by the slow rate of social progress, I want you to visualize a murmur of starlings a continent wide and imagine it trying to change course. And when something catastrophic happens, I want you to think about the relative probabilities of individual malicious saboteurs, or simple unaligned motivations. 
 
-When you are frustrated with the way society is function, i want you to think of these birds. When you are concerned about the rampant inefficiencies of big government i want you to think about which individual well meaning motivators are creating that emergent behaviour. When are you worried about the rise of the alt-right I want you to try to understand what is enticing people to join that murmur. When you are disheartened by the slow rate of social progress, i want you to visualize a murmur of starlings a continent wide and imagine it trying to change course. And when something catastrophic happens, i want you to think about the relative probabilities of individual malicious saboteurs, or simply unaligned motivations. 
-
-But more importantly and more urgently i want you to think about everyone around you, those you agree with and those you disagree with alike, as members of the same flock. And i want you to think about yourself embedded within, and what you can do to avoid the wall.
+But more importantly and more urgently I want you to think about everyone around you, those you agree with and those you disagree with alike, as members of the same flock. And I want you to think about yourself embedded within, and what you can do to avoid the wall.
 
