@@ -9,15 +9,17 @@
 <script src="./simulation/boids.js"></script>
 <script src="./simulation/obstacle.js"></script>
 <iframe src="https://giphy.com/embed/o9QZ9O8CmdZAs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-I have a very clear memory of sitting by a window at a young age and watching a flock of starlings weave its way through the dimly lit sky. The eb and the flow of that mass of birds drew me in completely and I sat and watched their collective movements until they finally came to rouste. It was an awesome display, and i mean that in an old sense of the word. That is to say it filled me with awe. Which i can’t say is always a pleasant feeling. There was something almost ominous in the coordination of their movements. They seemed to be so instantaneously in sync and I was intimidated by their perfect communication. This behaviour has held my interest since then, but more and more i am coming to see it as a lens through which to view the behaviour of people, and many of our societies current ailments. I want to know how a group of starlings so in sync and coordinated, dancing through the sky, can, on occasion, fly head first into a wall.
+I have a very clear memory of sitting by a window at a young age and watching a flock of starlings weave its way through the dimly lit sky. The eb and the flow of that mass of birds drew me in completely and I sat and watched their collective movements until they finally came to rouste. It was an awesome display, and I mean that in an old sense of the word. That is to say it filled me with awe. Which i can’t say is always a pleasant feeling. There was something almost ominous in the coordination of their movements. They seemed to be so instantaneously in sync and I was intimidated by that perfect communication. This behaviour has held my interest since then, but more and more I am coming to see it as a lens through which to view the behaviour of people, and many of our societies current ailments. I want to know how a group of starlings so in sync and coordinated, dancing through the sky, can, on occasion, fly head first into a wall.
 
-This behaviour of starlings is called a murmuration. It is exhibited by many herd animals including bats, zebras, and minoes. It can be thought of as an emergent property. That is to say that it is a property of a group which arises out of the properties of individuals and the interactions there of. Color is often used as an example of an emergent property -  a single molecule does not have a colour whereas a group of molecules, the shirt which you are wearing now for instance, most certainly does. In this case, the color of your shirt is a function of the way in which the molecules of which it is made are arranged, and in particular which frequencies of light are reflected or absorbed by this arrangement. The color red is an emergent property of molecules which when put together absorb all frequencies of visible light but red. This is a rather banal example of an emergent property but the topic becomes much more interesting when you think of such things as cosmic order or indeed consciousness. It seems unlikely that a single neuron is conscious but the group of them which make up my brain and yours certainly are. Consciousness or in our case starling murmurations, are emergent properties worth at least a few pages. 
+This behaviour of starlings is called a murmuration. It is exhibited by many herd animals including bats, and minoes. It can be thought of as an emergent property. That is to say that it is a property of a group which arises out of the properties of individuals and the interactions there of. Color is often used as an example of an emergent property -  a single molecule does not have a colour whereas a group of molecules, the shirt which you are wearing now for instance, most certainly does. In this case, the color of your shirt is a function of the way in which the molecules of which it is made are arranged, and in particular which frequencies of light are reflected or absorbed by this arrangement. The color red is an emergent property of molecules which when put together absorb all frequencies of visible light but red. This is a rather banal example of an emergent property but the topic becomes much more interesting when you think of such things as cosmic order or indeed consciousness. It seems unlikely that a single neuron is conscious but the group of them which make up my brain and yours certainly are. Consciousness or in our case starling murmurations, are emergent properties worth at least a few pages. 
 
 We are living in a convenient time for such pages as we have at our disposal a relatively new tool for scientific exploration, in computational simulation. There are countless philosophical pages dedicated to the role of simulation in science, and I will by no means attempt to summarize them here. I will simply posit that a new and interesting way of investigating a natural phenomena is to attempt to simulate it yourself. If you are able to recreate an accurate simulation of the observed phenomena then you will have learned something about what initial conditions that phenomena may need to arise, and what rules need to be followed to maintain it. This is particularly interesting when the phenomena is an emergent one, because we are able to simulate the individuals and see if the we can accurately recreate the global property.  
 
 <canvas id="boids1" class="unselectable"></canvas>
 
-This investigative tool has been used for the behaviour of ants, the patterns of bark on trees, and the growth of the canopy in rainforests. Here it has been used to explore the murmurations of birds.
+This investigative tool has been used for the behaviour of ants, the patterns of bark on trees, and the growth of the canopy in rainforests. Here it has been used to explore the murmurations of birds[^1].
+
+[^1]:code forked from [Emergent Mind](http://www.emergentmind.com/boids) and altered by me.
 
 Each bird (small red triangle) above is governed by 3 simple rules: 
 1. Fly towards your neighbors (cohesion)
@@ -32,11 +34,11 @@ It then updates the velocity of each bird based on the three rules outlined abov
 
 In the box below you can turn these knobs up or down yourself and see how it changes their behaviour. You will notice that a fine balance needs to be found between these 3 numbers in order for the flock behaviour to arise.
 <form name = "params" id = "params" >
-    <text><b> separationMultiplier </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
+    <text><b> separation </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
     <br>
-    <text><b> cohesionMultiplier </b></text> <input id="cohesionMultiplier_boids2" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> cohesion </b></text> <input id="cohesionMultiplier_boids2" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
-    <text><b> alignmentMultiplier </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> alignment </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
 </form>	
 <canvas id="boids2" class="unselectable"></canvas>
@@ -49,11 +51,11 @@ We can make things more interesting by giving them something to avoid, by adding
 Let’s say that we have observed catastrophe, our flock has flown straight into a wall. We must now play the role of detective and try to determine what happened to cause such a tragedy. Two explanations jump to mind. Either a small number of saboteurs, with malice and forethought, guided the flock to destruction, or all the birds were collectively unable to avoid the obstacle because they were blindsided by other motivators. If we turn up the knob controlling how close they want to stay to each other, they may be preoccupied by that desire and fly straight into oblivion. In the box below you can play with the number of saboteurs (where each saboteur wants to fly into the wall) and the relative weighting of the rule forces. I will leave it to you to determine which is a more practical way to insite destruction. 
 
 <form name = "params" id = "params" >
-    <text><b> separationMultiplier </b></text> <input id="separationMultiplier_boids4" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
+    <text><b> separation </b></text> <input id="separationMultiplier_boids4" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
     <br>
-    <text><b> cohesionMultiplier </b></text> <input id="cohesionMultiplier_boids4" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> cohesion </b></text> <input id="cohesionMultiplier_boids4" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
-    <text><b> alignmentMultiplier </b></text> <input id="alignmentMultiplier_boids4" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> alignment </b></text> <input id="alignmentMultiplier_boids4" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
     <text><b> sabateurs </b></text> <input id="num_sabateurs_boids4" input type="range" name="num_sabateurs" min="0" max="50" value="0" step="1"/>
 </form>	
