@@ -30,21 +30,19 @@ In practice these rules are implemented by calculating the distance between each
 To be quite specific the code used to create this illustration keeps track of the velocity of each bird, and 60 times a second, it calculates the distance between each other bird,
 It then updates the velocity of each bird based on the three rules outlined above, each multiplied by a constant value. In the code there are 3 numbers which represent the relative effect of rule 1, 2 and 3, which were predefined by me and used to determine the strength of each rule. If the multiplier for rule 1 is too big, then the birds will all crowd together into a single point. If the multiplier for rule 3 is too big then they will all flee from each other in a chaotic mess. Each would result in something thoroughly uninteresting to look at. 
 
-We can make things more interesting by giving them something to avoid, by adding in a fourth rule - stay away from the predator.  In the box below you will play that role. Move your mouse (or finger if on a phone) into the box and notice how the tide of feathers avoids you like the plague. 
-
-<canvas id="boids2" class="unselectable"></canvas>
-
-This fourth rule also requires a multiplier, so our birds are now left with 4 knobs we can fiddle with - how much they want to be close to other birds, how much they want to fly like other birds,  how much they want to keep their personal space, and how much they want to avoid a predator.
-
-In the box below you can turn these knobs up or down yourself and see how it changes their behaviour. You will notice that a fine balance needs to be found between these 4 numbers in order for the flock behaviour to arise.
+In the box below you can turn these knobs up or down yourself and see how it changes their behaviour. You will notice that a fine balance needs to be found between these 3 numbers in order for the flock behaviour to arise.
 <form name = "params" id = "params" >
-    <text><b> separationMultiplier </b></text> <input id="separationMultiplier_boids3" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
+    <text><b> separationMultiplier </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
     <br>
-    <text><b> cohesionMultiplier </b></text> <input id="cohesionMultiplier_boids3" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> cohesionMultiplier </b></text> <input id="cohesionMultiplier_boids2" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
-    <text><b> alignmentMultiplier </b></text> <input id="alignmentMultiplier_boids3" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> alignmentMultiplier </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
     <br>
 </form>	
+<canvas id="boids2" class="unselectable"></canvas>
+
+We can make things more interesting by giving them something to avoid, by adding in a fourth rule - stay away from the predator.  In the box below you will play that role. Move your mouse (or finger if on a phone) into the box and notice how the tide of feathers avoids you like the plague. I have also added another obstacle for them to avoid in the large red circle right in the middel there. If the birds come into contact with that circle, they will be removed from the simulation, or to put it more bluntly and metaphorically, they will be killed.  
+
 <canvas id="boids3" class="unselectable"></canvas>
 
 

@@ -58,7 +58,7 @@ $(function(name) {
 		});			
 	}
 	initialize_cavas_simulation('boids1',false, false)
-	initialize_cavas_simulation('boids2',true, true)
+	initialize_cavas_simulation('boids2',false, true)
 	initialize_cavas_simulation('boids3',true, true)
 	initialize_cavas_simulation('boids4',true, true)
 
