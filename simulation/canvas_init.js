@@ -20,12 +20,12 @@ function resizeCanvas( width, height ) {
 	var canvas$ = $( 'canvas' );
 
 	if ( 'undefined' == typeof( height ) ) {
-		height = $( section ).height();
+		height = $( window ).width()/2;
 	}
 	canvas$.attr( 'height', height );
 
 	if ( 'undefined' == typeof( width ) ) {
-		width = $( section ).width();
+		width = $( window ).width()/2;
 	}
 	canvas$.attr( 'width', width );
 
