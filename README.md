@@ -1,43 +1,5 @@
-## Welcome to GitHub Pages
+# Flock Dynamics and Social Catastrophy 
 
-You can use the [editor on GitHub](https://github.com/nickfrosst/flock_dynamics/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nickfrosst/flock_dynamics/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-
-<!DOCTYPE html>
 <script src="./simulation/application.js"></script>
 <link href="./simulation/boids.css" media="screen" rel="stylesheet">
 <script src="./simulation/canvas_init.js"></script>
@@ -53,14 +15,14 @@ This behaviour of starlings is called a murmuration. It is exhibited by many her
 
 We are living in a convenient time for such pages as we have at our disposal a relatively new tool for scientific exploration, in computational simulation. There are countless philosophical pages dedicated to the role of simulation in science, and I will by no means attempt to summarize them here. I will simply posit that a new and interesting way of investigating a natural phenomena is to attempt to simulate it yourself. If you are able to recreate an accurate simulation of the observed phenomena then you will have learned something about what initial conditions that phenomena may need to arise, and what rules need to be followed to maintain it. This is particularly interesting when the phenomena is an emergent one, because we are able to simulate the individuals and see if the we can accurately recreate the global property.  
 
-<canvas id="boids" class="unselectable"></canvas>
+<canvas id="boids1" class="unselectable"></canvas>
 
 This investigative tool has been used for the behaviour of ants, the patterns of bark on trees, and the growth of the canopy in rainforests. Here it has been used to explore the murmurations of birds.
 
 Each bird (small red triangle) above is governed by 3 simple rules: 
-1) Fly towards your neighbors (cohesion)
-2) Match your neighbors' speed and direction (alignment)
-3) Don't get too close to your neighbors (separation)
+1. Fly towards your neighbors (cohesion)
+2. Match your neighbors' speed and direction (alignment)
+3. Don't get too close to your neighbors (separation)
 That’s it. All the patterns and movement and motion are just born from those simple rules, followed by each bird.
 
 In practice these rules are implemented by calculating the distance between each bird and applying the attraction or repulsion proportional to the distance squared. Similar equations can be used to model the movement of the moon around the earth, the earth around the sun, and the sun around the rest of the cosmic expanse, which alludes to the omnipresence of this type of movement, and explains my fascination. But before you go off to scrawl equations on the wall in crayon, or start a neo-pythagorean cult, i need to remind you that there is a difference between an ontological claim and a convenient explanatory tool. I won’t even claim that the equations used to create this visualizations have anything to do with the movement of birds or indeed the behaviour of people. But they are at least a useful way of thinking about it. 

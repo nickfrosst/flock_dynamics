@@ -1,7 +1,9 @@
 div#container{position:relative}
 div#container 
-canvas#boids{margin:0 auto;display:block;border-bottom:2px solid black;background-color:#111}
+canvas#boids1{margin:0 auto;display:block;border-bottom:2px solid black;background-color:#111}
 canvas#boids2{margin:0 auto;display:block;border-bottom:2px solid black;background-color:#111}
+canvas#boids3{margin:0 auto;display:block;border-bottom:2px solid black;background-color:#111}
+canvas#boids4{margin:0 auto;display:block;border-bottom:2px solid black;background-color:#111}
 div#container 
 div#click_notice{position:absolute;top:0;left:0;font-size:14px;color:#777;cursor:default}
 h1{text-align: center;}
