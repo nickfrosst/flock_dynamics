@@ -1,5 +1,6 @@
 # Flock Dynamics and Social Catastrophy 
 
+<div class=panel>
 <script src="./simulation/application.js"></script>
 <link href="./simulation/boids.css" media="screen" rel="stylesheet">
 <script src="./simulation/canvas_init.js"></script>
@@ -67,4 +68,5 @@ Now by this point you are no doubt tired of birds and small black dots, and perh
 When you are frustrated with the way society is function, i want you to think of these birds. When you are concerned about the rampant inefficiencies of big government i want you to think about which individual well meaning motivators are creating that emergent behaviour. When are you worried about the rise of the alt-right I want you to try to understand what is enticing people to join that murmur. When you are disheartened by the slow rate of social progress, i want you to visualize a murmur of starlings a continent wide and imagine it trying to change course. And when something catastrophic happens, i want you to think about the relative probabilities of individual malicious saboteurs, or simply unaligned motivations. 
 
 But more importantly and more urgently i want you to think about everyone around you, those you agree with and those you disagree with alike, as members of the same flock. And i want you to think about yourself embedded within, and what you can do to avoid the wall.
+</div>
 
