@@ -4,7 +4,7 @@ canvas{
     display: block;
     width: 100%;
     border-bottom:2px solid grey;
-    background-color:#111;
+    background-color:#555555;
 }
 .giphy-embed { width: 100%;} 
 h1 { text-align: center; }
