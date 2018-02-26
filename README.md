@@ -36,11 +36,11 @@ To be quite specific the code used to create this illustration keeps track of th
 
 In the box below you can turn these knobs up or down yourself and see how it changes their behaviour. You will notice that a fine balance needs to be found between these 3 numbers in order for the flock behaviour to arise.
 <form name = "params" id = "params" >
-    <text><b> cohesion </b></text> <input id="cohesionMultiplier_boids2" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> cohesion: </b></text> <input id="cohesionMultiplier_boids2" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1" class="slider"/>
     <br>
-     <text><b> alignment </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+     <text><b> alignment: </b></text> <input id="alignmentMultiplier_boids2" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1" class="slider"/>
     <br>
-    <text><b> separation </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
+    <text><b> separation: </b></text> <input id="separationMultiplier_boids2" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1" class="slider"/>
     <br>
 </form>	
 <canvas id="boids2" class="unselectable"></canvas>
@@ -50,16 +50,16 @@ We can make things more interesting by giving them something to avoid, by adding
 Let’s say that we have observed catastrophe, our flock has flown straight into a that obstacle. We must now play the role of detective and try to determine what happened to cause such a tragedy. Two explanations jump to mind. Either a small number of saboteurs, with malice and forethought, guided the flock to destruction, or all the birds were collectively unable to avoid the obstacle because they were blindsided by other motivators. If we turn down the dial for their desire to stay seperate and turn up the dial for turn up the dial for their desire to align themselves, then the flock will be too slow at changing course, and may fly straight into the obstacle. In the box below you can play with the number of saboteurs (where each saboteur wants to fly into the obstacle, and is represented in green) and the relative weighting of the rule forces. I believe you will find that it is easier to incite destruction of the flock by changing the rule weightings than by added individual saboteurs. 
 
 <form name = "params" id = "params" >
-    <text><b> cohesion </b></text> <input id="cohesionMultiplier_boids4" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> cohesion: </b></text> <input id="cohesionMultiplier_boids4" input type="range" name="cohesionMultiplier" min="0" max="10" value="1" step="0.1" class="slider"/>
     <br>
-    <text><b> alignment </b></text> <input id="alignmentMultiplier_boids4" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1"/>
+    <text><b> alignment: </b></text> <input id="alignmentMultiplier_boids4" input type="range" name="alignmentMultiplier" min="0" max="10" value="1" step="0.1" class="slider"/>
     <br>
-    <text><b> separation </b></text> <input id="separationMultiplier_boids4" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1"/>
+    <text><b> separation: </b></text> <input id="separationMultiplier_boids4" input type="range" name="separationMultiplier" min="0" max="10" value="2" step="0.1" class="slider"/>
     <br>
-    <text><b> saboteurs </b></text> <input id="num_sabateurs_boids4" input type="range" name="num_sabateurs" min="0" max="50" value="0" step="1"/>
+    <text><b> saboteurs: </b></text> <input id="num_sabateurs_boids4" input type="range" name="num_sabateurs" min="0" max="50" value="0" step="1" class="slider"/>
     <br>
 </form>	
-<button id="reset_button_boids4">Reset</button>
+<button id="reset_button_boids4" class="btn">Reset</button>
 <canvas id="boids4" class="unselectable"></canvas>
 
 Now by this point you are no doubt tired of birds and small red triangles, and perhaps see what I am getting to, so I will be blunt.
