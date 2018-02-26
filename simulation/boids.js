@@ -32,6 +32,7 @@ $(function(name) {
 
 		$('#reset_button_' + name).click(function(e) {
 			simulation.initialize(use_obstacle,avoid_mouse);
+			document.getElementById('#num_sabateurs_'+ name).value = 0;
 		});
 
 		$('canvas#' + name).mousemove(function(e) {
