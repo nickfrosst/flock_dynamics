@@ -19,7 +19,7 @@ This behaviour in starlings is called a murmuration and is exhibited by many her
 
 We are living in a convenient time for such paragraphs as we have at our disposal a relatively new tool for scientific exploration — computational simulation. There are countless philosophical arguments dedicated to the role of simulation in science and I will by no means attempt to summarize them here. I will simply posit that a new and interesting way of investigating a natural phenomenon is to attempt to simulate it yourself. If you are able to recreate an accurate simulation of the observed phenomenon then you will have learned something about what initial conditions that phenomenon may need to arise, and what rules need to be followed to maintain it. This is particularly interesting when the phenomenon is an emergent one, because we are able to simulate the individuals and see if the we can accurately recreate the global property.
 
-This investigative tool has been used for the behaviour of ants, the growth of plants, or the development of entire ecosystems[^1] to name just a few. Here it has been used to explore the murmurations of birds[^2].
+This investigative tool has been used for the behaviour of ants, the growth of plants, or the development of entire ecosystems[^1] to name just a few. Here it has been used to explore the murmurations of birds[^2][^3].
 
 [^1]:See wikipedia for an overview of each, and respectively, [here](https://en.wikipedia.org/wiki/Artificial_ants), [here](https://en.wikipedia.org/wiki/Simulated_growth_of_plants) and [here](ttps://en.wikipedia.org/wiki/Ecosystem_model)
 [^2]:code forked from [Emergent Mind](http://www.emergentmind.com/boids) and updated by me.
