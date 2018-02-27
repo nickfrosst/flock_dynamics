@@ -23,7 +23,7 @@ This investigative tool has been used for the behaviour of ants, the growth of p
 
 [^1]:See wikipedia for an overview of each, and respectively, [here](https://en.wikipedia.org/wiki/Artificial_ants), [here](https://en.wikipedia.org/wiki/Simulated_growth_of_plants) and [here](ttps://en.wikipedia.org/wiki/Ecosystem_model)
 [^2]:code forked from [Emergent Mind](http://www.emergentmind.com/boids) and updated by me.
-[^3]: thanks to Martha, Thomas, Jon, Michael, and Lyon for suggestions and edits. 
+[^3]: thanks to Martha, Thomas, Jon, Michael, and Lyon for suggestions and edits, and Natalie for css sanity. 
 
 Each bird above (small red triangle) is governed by three simple rules:
 1. Fly towards your neighbors (cohesion)
