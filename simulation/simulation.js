@@ -79,7 +79,7 @@ Simulation.prototype = {
 
 	update_sabateurs: function(v){
 		for(var bi in this.boids) {
-			this.boids[bi].set_sabateur(bi < v)
+			this.boids[bi].set_sabateur(parseInt(bi) < parseInt(v))
 		}
 	},
 
