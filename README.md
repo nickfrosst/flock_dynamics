@@ -1,7 +1,7 @@
 
 # Flock Dynamics and Societal Catastrophy 
 ## an essay with javascript fidgets 
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <script src="./simulation/application.js"></script>
 <link href="./simulation/boids.css" media="screen" rel="stylesheet">
 <script src="./simulation/canvas_init.js"></script>
