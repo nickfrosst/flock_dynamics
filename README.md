@@ -1,5 +1,5 @@
 
-# Flock Dynamics and Societal Catastrophy 
+# Flock Dynamics and Societal Catastrophe 
 ## an essay with javascript fidgets 
 <link rel="shortcut icon" href="images/favicon.ico">
 <script src="./simulation/application.js"></script>
