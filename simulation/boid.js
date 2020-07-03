@@ -25,7 +25,7 @@ function Boid(x, y, simulation) {
 
 Boid.prototype = {
 
-	render: function() {
+	render: function () {
 		var directionVector = this.velocity.normalize().multiplyBy(this.render_size);
 		var inverseVector1 = new Vector(- directionVector.y, directionVector.x);
 		var inverseVector2 = new Vector(directionVector.y, - directionVector.x);
@@ -40,11 +40,11 @@ Boid.prototype = {
 		this.simulation.ctx.lineTo(this.position.x, this.position.y);
 		this.simulation.ctx.strokeStyle = 'rgba(255, 59, 0, 1)';
 		this.simulation.ctx.stroke();
-		if (this.sabateur){
+		if (this.sabateur) {
 			this.simulation.ctx.fillStyle = 'rgba(22, 236, 22, 0.8)';
-		}else if (this.death_throws == 0){
+		} else if (this.death_throws == 0) {
 			this.simulation.ctx.fillStyle = 'rgba(236, 72, 22, 0.8)';
-		}else {
+		} else {
 			this.simulation.ctx.fillStyle = 'rgba(22, 72, 236, 0.8)';
 		}
 		this.simulation.ctx.fill();
@@ -52,16 +52,16 @@ Boid.prototype = {
 
 	//
 	// Rule 1: Boids try to fly towards the centre of mass of neighbouring boids.
-	getCohesionVector: function(boids) {
+	getCohesionVector: function (boids) {
 		var totalPosition = new Vector(0, 0);
 		var neighborCount = 0;
-		for(var bi in boids) {
+		for (var bi in boids) {
 			var boid = boids[bi];
 			if (this == boid) {
 				continue;
 			}
 
-			var distance = this.position.getDistance(boid.position) + EPSILON ;
+			var distance = this.position.getDistance(boid.position) + EPSILON;
 			if (distance <= NEIGHBOR_DISTANCE) {
 				totalPosition = totalPosition.add(boid.position);
 				neighborCount++;
@@ -76,7 +76,7 @@ Boid.prototype = {
 		}
 	},
 
-	seek: function(targetPosition) {
+	seek: function (targetPosition) {
 		var desiredVector = targetPosition.subtract(this.position);
 
 		// Scale to the maximum speed
@@ -91,12 +91,12 @@ Boid.prototype = {
 
 	//
 	// Rule 2: Boids try to keep a small distance away from other objects (including other boids).
-	getSeparationVector: function(boids) {
+	getSeparationVector: function (boids) {
 
 		var steeringVector = new Vector(0, 0);
 		var neighborCount = 0;
 
-		for(var bi in boids) {
+		for (var bi in boids) {
 			var boid = boids[bi];
 			if (this == boid) {
 				continue;
@@ -122,12 +122,12 @@ Boid.prototype = {
 		if (distance > 0 && distance < MOUSE_DESIRED_SEPARATION && this.simulation.avoid_mouse) {
 			var deltaVector = this.position.subtract(mouse_position);
 			deltaVector.iNormalize();
-			deltaVector.iDivideBy(distance**2);
+			deltaVector.iDivideBy(distance ** 2);
 			deltaVector.iMultiplyBy(5000);
 			averageSteeringVector.iAdd(deltaVector);
 		}
 
-		for(var ob in this.simulation.obstacles) {
+		for (var ob in this.simulation.obstacles) {
 			var obstacle = this.simulation.obstacles[ob];
 
 			var distance = this.position.getDistance(obstacle.position) + EPSILON;
@@ -136,9 +136,9 @@ Boid.prototype = {
 				deltaVector.iNormalize();
 				deltaVector.iDivideBy(distance);
 				steeringVector.iAdd(deltaVector);
-				if (this.sabateur){
+				if (this.sabateur) {
 					deltaVector.iMultiplyBy(-obstacle.repulsion);
-				}else{
+				} else {
 					deltaVector.iMultiplyBy(obstacle.repulsion);
 				}
 				averageSteeringVector.iAdd(deltaVector);
@@ -158,11 +158,11 @@ Boid.prototype = {
 
 	//
 	// Rule 3: Boids try to match velocity with near boids.
-	getAlignmentVector: function(boids) {
+	getAlignmentVector: function (boids) {
 		var perceivedFlockVelocity = new Vector(0, 0);
 		var neighborCount = 0;
 
-		for(var bi in boids) {
+		for (var bi in boids) {
 			var boid = boids[bi];
 			if (this == boid) {
 				continue;
@@ -189,7 +189,7 @@ Boid.prototype = {
 		}
 	},
 
-	flock: function(boids) {
+	flock: function (boids) {
 		var cohesionVector = this.getCohesionVector(boids);
 		var separationVector = this.getSeparationVector(boids);
 		var alignmentVector = this.getAlignmentVector(boids);
@@ -203,7 +203,7 @@ Boid.prototype = {
 		this.acceleration.iAdd(alignmentVector);
 	},
 
-	bound: function() {
+	bound: function () {
 
 		if (this.position.x > this.simulation.canvasWidth + BORDER_OFFSET) {
 			this.position.x = -BORDER_OFFSET;
@@ -222,8 +222,8 @@ Boid.prototype = {
 		}
 	},
 
-	update: function() {
-		if (this.death_throws ==0){
+	update: function () {
+		if (this.death_throws == 0) {
 			this.velocity.iAdd(this.acceleration);
 
 			// Limit speed
@@ -237,23 +237,23 @@ Boid.prototype = {
 		}
 	},
 
-	run: function(boids) {
+	run: function (boids) {
 		this.flock(boids);
 		this.update();
 		this.render();
 	},
 
-	set_death_throws: function(){
+	set_death_throws: function () {
 		this.death_throws = 50;
 	},
 
-	decrease_death_throws: function(){
+	decrease_death_throws: function () {
 		this.death_throws = this.death_throws - 1;
 	},
-	
-	set_sabateur: function(b){
+
+	set_sabateur: function (b) {
 		this.sabateur = b;
 	},
 
 }
-;
+	;
